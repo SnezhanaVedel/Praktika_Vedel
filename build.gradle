@@ -2,21 +2,34 @@ plugins {
     id 'java'
     id 'application'
 }
+apply plugin: 'java'
+apply plugin: 'application'
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+group 'lpz.Main'
+version '1.0-SNAPSHOT'
+
+mainClassName = "lpz.Main"
 
 repositories {
     mavenCentral()
-}
-
-application {
-    mainClassName = 'org.example.MenuExample'
+    mavenLocal()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'postgresql:postgresql:9.1-901-1.jdbc4'
+}
+
+jar {
+    manifest.attributes("Main-Class": mainClassName);
+    baseName = 'ExampleJDBC'
+    version = '1.1.0'
+}
+
+
+task myJavadocs(type: Javadoc) {
+    source = sourceSets.main.allJava
 }
 
 test {
