@@ -1,0 +1,116 @@
+<!-- res/layout/activity_inventory_add.xml -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp">
+
+    <!-- Добавляем подпись к Spinner для выбора названия книги -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bookLabel"
+        android:text="Выберите книгу"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        />
+
+    <!-- Добавляем Spinner для выбора названия книги -->
+    <Spinner
+        android:id="@+id/bookSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookLabel"
+        android:layout_marginTop="8dp"
+        android:hint="Выберите книгу"/>
+
+    <!-- Добавляем подпись к Spinner для выбора адреса магазина -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/storeLabel"
+        android:text="Выберите магазин"
+        android:textSize="16sp"
+        android:layout_below="@id/bookSpinner"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        />
+
+    <!-- Добавляем Spinner для выбора адреса магазина -->
+    <Spinner
+        android:id="@+id/storeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/storeLabel"
+        android:layout_marginTop="8dp"
+        android:hint="Выберите магазин"/>
+
+    <!-- Новая надпись, информирующая о текущем количестве книг в магазине -->
+    <TextView
+        android:id="@+id/quantityInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/storeSpinner"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:text="Количество книг в магазине: 0"/>
+
+    <!-- Добавляем подпись к EditText для ввода количества книг -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quantityLabel"
+        android:text="Количество книг для поступления/продажи:"
+        android:textSize="16sp"
+        android:layout_below="@id/quantityInfoTextView"
+        android:layout_marginTop="102dp"
+        android:layout_marginBottom="8dp"
+        />
+
+    <!-- Добавляем EditText для ввода количества книг -->
+    <EditText
+        android:id="@+id/quantityEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quantityLabel"
+        android:layout_marginTop="8dp"
+        android:hint="Количество книг"/>
+
+    <!-- Добавляем RadioGroup для выбора типа операции -->
+    <RadioGroup
+        android:id="@+id/operationRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quantityEditText"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <!-- Добавляем RadioButton для типа операции "Поступление" -->
+        <RadioButton
+            android:id="@+id/radioAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Поступление"
+            android:checked="true"/>
+
+        <!-- Добавляем RadioButton для типа операции "Продажа" -->
+        <RadioButton
+            android:id="@+id/radioSubtract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Продажа"/>
+    </RadioGroup>
+
+    <!-- Добавляем кнопку для обновления записи -->
+    <Button
+        android:id="@+id/addInventoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/operationRadioGroup"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Обновить запись"/>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LibraryChain</string>
+    <string-array name="table_names">
+        <item>Магазины</item>
+        <item>Книги</item>
+        <item>Учет</item>
+    </string-array>
+</resources>
